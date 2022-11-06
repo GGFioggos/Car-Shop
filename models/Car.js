@@ -9,6 +9,7 @@ const CarSchema = new Schema({
     price: Number,
     brand: { type: Schema.Types.ObjectId, ref: 'Manufacturer', required: true },
     category: { type: Schema.Types.ObjectId, ref: 'Category', required: true },
+    image: String,
 });
 
 CarSchema.virtual('url').get(function () {

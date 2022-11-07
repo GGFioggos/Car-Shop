@@ -33,6 +33,7 @@ function carCreate(
     brand,
     category,
     image,
+    inStock,
     cb
 ) {
     cardetail = {
@@ -43,6 +44,7 @@ function carCreate(
         brand,
         category,
         image,
+        inStock,
     };
 
     var car = new Car(cardetail);
@@ -202,6 +204,7 @@ function createCars(cb) {
                     manufacturers[1],
                     categories[0],
                     'https://bucket.carmodel.com/images/cm-lg/153514-2.jpg',
+                    3,
                     callback
                 );
             },
@@ -214,6 +217,7 @@ function createCars(cb) {
                     manufacturers[1],
                     categories[0],
                     'https://bucket.carmodel.com/images/cm-lg/160465-1.jpg',
+                    2,
                     callback
                 );
             },
@@ -226,6 +230,7 @@ function createCars(cb) {
                     manufacturers[0],
                     categories[0],
                     'https://bucket.carmodel.com/images/cm-lg/159817.jpg',
+                    6,
                     callback
                 );
             },
@@ -238,6 +243,7 @@ function createCars(cb) {
                     manufacturers[0],
                     categories[0],
                     'https://bucket.carmodel.com/images/cm-lg/158996.jpg',
+                    8,
                     callback
                 );
             },
@@ -250,6 +256,7 @@ function createCars(cb) {
                     manufacturers[5],
                     categories[0],
                     'https://bucket.carmodel.com/images/cm-lg/160508-1.jpg',
+                    1,
                     callback
                 );
             },
@@ -262,6 +269,7 @@ function createCars(cb) {
                     manufacturers[5],
                     categories[0],
                     'https://bucket.carmodel.com/images/cm-lg/160101-1.jpg',
+                    12,
                     callback
                 );
             },
@@ -274,6 +282,7 @@ function createCars(cb) {
                     manufacturers[3],
                     categories[2],
                     'https://bucket.carmodel.com/images/cm-lg/148629-3.jpg',
+                    10,
                     callback
                 );
             },
@@ -286,6 +295,7 @@ function createCars(cb) {
                     manufacturers[3],
                     categories[2],
                     'https://bucket.carmodel.com/images/cm-lg/160937.jpg',
+                    7,
                     callback
                 );
             },
@@ -298,6 +308,7 @@ function createCars(cb) {
                     manufacturers[4],
                     categories[2],
                     'https://bucket.carmodel.com/images/cm-lg/148634-1.jpg',
+                    3,
                     callback
                 );
             },
@@ -310,6 +321,7 @@ function createCars(cb) {
                     manufacturers[4],
                     categories[2],
                     'https://bucket.carmodel.com/images/cm-lg/154283-3.jpg',
+                    15,
                     callback
                 );
             },
@@ -322,6 +334,7 @@ function createCars(cb) {
                     manufacturers[2],
                     categories[1],
                     'https://bucket.carmodel.com/images/cm-lg/157984-1.jpg',
+                    5,
                     callback
                 );
             },
@@ -334,6 +347,7 @@ function createCars(cb) {
                     manufacturers[2],
                     categories[4],
                     'https://bucket.carmodel.com/images/cm-lg/154004-1.jpg',
+                    9,
                     callback
                 );
             },
@@ -346,6 +360,7 @@ function createCars(cb) {
                     manufacturers[6],
                     categories[0],
                     'https://bucket.carmodel.com/images/cm-lg/100648-1.jpg',
+                    2,
                     callback
                 );
             },

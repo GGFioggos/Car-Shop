@@ -2,6 +2,22 @@ doctype html
 html
   head
     title= title
+    script(src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    div(class="header")
+      a(href="/home") 
+        img(src="./images/companylogo.png", alt="company logo")
+      ul(class="header-list")
+        li
+          a(href="/home") Home  
+        li 
+          a(href="/categories") Categories
+        li 
+          a(href="/manufacturers") Manufacturers
     block content
+
+    div(class="footer")
+      p Copyright © 2022 GGFioggos
+      a(href="https://github.com/GGFioggos" target="_blank")
+        i(class="fab fa-github" aria-hidden="true")

@@ -1,8 +1,64 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html,body {
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+ul {
+  list-style: none;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: #333;
+}
+
+.header {
+  height: 80px;
+  display: flex;
+  background-color: rgb(192, 192, 192);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header img {
+  height: 60px;
+  margin-left: 30px;
+}
+
+.header ul {
+  display: flex;
+  gap: 40px;
+  font-size: 1.3rem;
+  margin-right: 50px;
+}
+
+
+
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+    color: white;
+    display: flex;
+    gap: 10px;
+    font-size: 1.1rem;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    background-color: #333;
+    height: 50px;
+    width: 100%;
+}
+
+.fa-github {
+  color: white;
+  font-size: 22px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
 }

@@ -1,5 +1,22 @@
 extends layout 
 
 block content 
-    h1= title
-    p Here is a list of #{title}
+    h1(class="title")= title
+    div(class="container")
+
+        if list_categories
+            if list_categories.length
+                each category in list_categories
+                    div(class="category-box")
+                        p= category.name 
+                        img(src=category.image , alt="category image")
+            else 
+                p There are no car categories 
+        else 
+            if list_manufacturers.length 
+                each manufacturer in list_manufacturers
+                    div(class="manufacturer-box")
+                        p= manufacturer.name 
+            else 
+                p There are no car manufacturers
+    

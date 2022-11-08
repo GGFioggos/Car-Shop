@@ -3,11 +3,11 @@ html
   head
     title= title
     script(src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous")
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    block stylesheet
   body
     div(class="header")
       a(href="/home") 
-        img(src="./images/companylogo.png", alt="company logo")
+        img(src="/images/companylogo.png", alt="company logo")
       ul(class="header-list")
         li
           a(href="/home") Home  

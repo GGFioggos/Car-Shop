@@ -1,5 +1,8 @@
 extends layout 
 
+block stylesheet 
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
 block content 
     h1(class="title")= title
     div(class="container")
@@ -8,15 +11,18 @@ block content
             if list_categories.length
                 each category in list_categories
                     div(class="category-box")
-                        p= category.name 
-                        img(src=category.image , alt="category image")
+                        a(href=`/category/${category._id}`)  
+                            p= category.name 
+                            img(src=category.image , alt="category image")
             else 
                 p There are no car categories 
         else 
             if list_manufacturers.length 
                 each manufacturer in list_manufacturers
                     div(class="manufacturer-box")
-                        p= manufacturer.name 
+                        a(href=`/manufacturer/${manufacturer._id}`) 
+                            p= manufacturer.name 
+                            img(src=manufacturer.logo, alt=`${manufacturer.name} logo`)
             else 
                 p There are no car manufacturers
     

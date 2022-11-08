@@ -5,6 +5,7 @@ body,html {
     padding: 0;
 }
 
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, 750px);
@@ -53,3 +54,13 @@ body,html {
     margin-top: 20px;
     justify-content: space-evenly;
 }
+
+.create-car {
+    border: 1px solid rgba(51, 51, 51, 0.336);
+    border-radius: 8px;
+    display: flex;
+    height: 280px;
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+

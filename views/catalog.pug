@@ -3,8 +3,14 @@ extends layout
 block stylesheet 
     link(rel='stylesheet', href='/stylesheets/catalog.css')
 
-block content 
-    p= title
+block content
+    div.title-options 
+        h2.title= title
+        ul.options 
+            li.delete 
+                button Delete
+            li.update
+                button Update
     div(class="container")
         if cars.length
             each car in cars
@@ -26,3 +32,7 @@ block content
                             div(class="car-stock") #[strong Stock:] #{car.inStock}
         else 
             h2 There are no cars in category #{title}
+        div(class="create-car")
+            a(href="/car/create")
+                p #[strong Create new car]
+                img(class="new-icon" src="https://cdn3.iconfinder.com/data/icons/harmonicons-06/64/plus-circle-512.png", alt="create new car icon") 

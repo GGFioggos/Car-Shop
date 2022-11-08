@@ -9,11 +9,16 @@ block content
         if cars.length
             each car in cars
                 div(class="car-card")  
-                    img(class="car-image" src=car.image, alt=`image of ${car.name}`)
-                    div(class="car-info") 
-                        p(class="car-name") #[strong #{car.name}] 
-                        div(class="car-brand") #[strong Manufacturer: ] #{car.brand.name}
-                        div(class="car-category") #[strong Category: ]  #{car.category.name}
+                    a(href= car.url) 
+                        img(class="car-image" src=car.image, alt=`image of ${car.name}`)
+                    div(class="car-info")
+                        a(href= car.url) 
+                            p(class="car-name") #[strong #{car.name}] 
+                        
+                        div(class="car-brand") #[strong Manufacturer: ]
+                            a(href=car.brand.url) #{car.brand.name}
+                        div(class="car-category") #[strong Category: ]
+                            a(href=car.category.url) #{car.category.name}
                         div(class="car-release") #[strong Release year:] #{car.releaseYear_formatted}
                         div(class="car-description") #[strong Description:] #{car.description}
                         div(class="buying-info")

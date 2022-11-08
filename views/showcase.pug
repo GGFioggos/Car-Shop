@@ -16,6 +16,10 @@ block content
                             img(src=category.image , alt="category image")
             else 
                 p There are no car categories 
+            div(class="category-box")
+                    a(href="/category/create")
+                        p Create new category
+                        img(class="new-icon" src="https://cdn3.iconfinder.com/data/icons/harmonicons-06/64/plus-circle-512.png", alt="") 
         else 
             if list_manufacturers.length 
                 each manufacturer in list_manufacturers
@@ -23,6 +27,11 @@ block content
                         a(href=`/manufacturer/${manufacturer._id}`) 
                             p= manufacturer.name 
                             img(src=manufacturer.logo, alt=`${manufacturer.name} logo`)
+            
             else 
                 p There are no car manufacturers
+            div(class="manufacturer-box")
+                    a(href="/manufacturer/create")
+                        p Create new manufacturer
+                        img(class="new-icon" src="https://cdn3.iconfinder.com/data/icons/harmonicons-06/64/plus-circle-512.png", alt="") 
     

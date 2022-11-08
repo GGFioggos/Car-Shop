@@ -10,9 +10,13 @@ block content
   div(class="container")
     form(method='POST' action='')
       label(for='category_name') Name:
-      input#category_name.form-control(type='text' placeholder='Category name' name='categoryName')
+      input#category_name.form-control(type='text' placeholder='Category name' name='categoryName' value=(category ===undefined ? '' : category.categoryName))
       label(for='description') Description:
-      textarea#description.form-control(type='text' placeholder='Category Description' name='categoryDescription')
+      textarea#description.form-control(type='text' placeholder='Category Description' name='categoryDescription' value=(category ===undefined ? '' : category.categoryDescription))
       label(for="category_image") Image:
-      input#category_image.form-control(type="url" placeholder="Category Image (URL)" name="categoryImage") 
+      input#category_image.form-control(type="text" placeholder="Category Image (URL)" name="categoryImage" value=(category ===undefined ? '' : category.categoryImage)) 
       button.btn.btn-primary(type='submit') Submit
+    if errors 
+      ul
+        for error in errors
+          li!= error.msg 

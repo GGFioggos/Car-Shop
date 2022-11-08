@@ -9,12 +9,10 @@ block stylesheet
 block content
   div(class="container")
     form(method='POST' action='')
-      label(for='category_name') Name:
-      input#category_name.form-control(type='text' placeholder='Category name' name='categoryName' value=(category ===undefined ? '' : category.categoryName))
-      label(for='description') Description:
-      textarea#description.form-control(type='text' placeholder='Category Description' name='categoryDescription' ) #{undefined===category ? '' : category.categoryDescription}
-      label(for="category_image") Image:
-      input#category_image.form-control(type="text" placeholder="Category Image (URL)" name="categoryImage" value=(category === undefined ? '' : category.categoryImage)) 
+      label(for='manufacturer_name') Name:
+      input#manufacturer_name.form-control(type='text' placeholder='Manufacturer name' name='manufacturerName' value=(manufacturer ===undefined ? '' : manufacturer.manufacturerName))
+      label(for='manufacturer_logo') Logo:
+      input#manufacturer_logo.form-control(type='text' placeholder='Manufacturer Logo (URL)' name='manufacturerLogo' value=(manufacturer ===undefined ? '' : manufacturer.manufacturerLogo))
       button.btn.btn-primary(type='submit') Submit
       if errors 
         ul

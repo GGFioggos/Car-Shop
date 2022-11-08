@@ -1,0 +1,54 @@
+@import url('style.css');
+
+body,html {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 750px);
+}
+
+.car-card {
+    border: 1px solid rgba(51, 51, 51, 0.623);
+    border-radius: 8px;
+    display: flex;
+    height: 280px;
+    width: 750px;
+}
+
+.car-image {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.car-info {
+    line-height: 25px;
+    padding-inline: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.car-description {
+    overflow: hidden;
+   text-overflow: ellipsis;
+   word-wrap: break-word;
+   display: -webkit-box;
+   -webkit-line-clamp: 3; /* number of lines to show */
+           line-clamp: 3; 
+   -webkit-box-orient: vertical;
+}
+
+.car-name {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.buying-info {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-evenly;
+}
+

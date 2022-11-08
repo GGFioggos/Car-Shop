@@ -2,7 +2,7 @@ html,body {
   font-size: 1rem;
   padding: 0;
   margin: 0;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .title,.description{
@@ -44,10 +44,12 @@ a {
   display: grid;
   text-align: center;
   grid-template-columns: repeat(auto-fit, 370px);
-  gap: 15px;
-  padding-inline: 15px;
+  column-gap: 15px;
+  row-gap: 30px;
+  padding-inline: 50px;
 }
 
+.manufacturer-box,
 .category-box {
   cursor: pointer;
   height: 330px;
@@ -57,15 +59,31 @@ a {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+.manufacturer-box:hover img,
 .category-box:hover img{
   transform: scale(1.1, 1.1);
+}
+
+.category-box img,
+.manufacturer-box img {
+  transition: transform 0.3s ease-in-out 0s;
 }
 
 .container .category-box img {
   height: 220px;
   width: 350px;
   border-radius: 5px;
-  transition: transform 0.3s ease-in-out 0s;
+}
+
+.manufacturer-box {
+  display: flex;
+  justify-content: center;
+  height: 280px;
+  width: 280px;
+}
+
+.manufacturer-box img {
+  height: 170px;
 }
 
 /* FOOTER */

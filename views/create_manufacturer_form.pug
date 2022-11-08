@@ -1,8 +1,8 @@
 extends layout 
 
 block stylesheet
-    link(rel="stylesheet", href="/stylesheets/form.css")
     link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z", crossorigin="anonymous")
+    link(rel="stylesheet", href="/stylesheets/form.css")
     script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV", crossorigin="anonymous")
 
@@ -14,7 +14,8 @@ block content
       label(for='manufacturer_logo') Logo:
       input#manufacturer_logo.form-control(type='text' placeholder='Manufacturer Logo (URL)' name='manufacturerLogo' value=(manufacturer ===undefined ? '' : manufacturer.manufacturerLogo))
       button.btn.btn-primary(type='submit') Submit
-      if errors 
-        ul
-          for error in errors
-            li.text-danger!= error.msg 
+      div.errors
+        if errors 
+          ul
+            for error in errors
+              li.text-danger!= error.msg 

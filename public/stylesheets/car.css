@@ -1,0 +1,33 @@
+@import url(style.css);
+
+.car-image {
+    border-radius: 8px;
+    height: 450px;
+}
+
+.container {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+}
+
+.car-card {
+    padding-inline: 150px;
+    display: flex;
+    width: 80vw;
+    margin-top: 100px;
+}
+
+.buying-info {
+    margin-top: 30px;
+}
+
+.car-info {
+    font-size: 1.1rem;
+    margin-left: 50px;
+    text-align: left;
+}
+
+.car-name {
+    font-size: 1.5rem;
+}

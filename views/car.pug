@@ -1,0 +1,19 @@
+extends layout 
+
+block stylesheet
+    link(rel="stylesheet", href="/stylesheets/car.css")
+
+block content 
+    div(class="container") 
+        div(class="car-card")
+            
+            img(class="car-image" src=car.image, alt=`image of ${car.name}`)
+            div(class="car-info")
+                p(class="car-name") #[strong #{car.name}] 
+                div(class="car-brand") #[strong Manufacturer: ] #{car.brand.name}
+                div(class="car-category") #[strong Category: ]  #{car.category.name}
+                div(class="car-release") #[strong Release year:] #{car.releaseYear_formatted}
+                div(class="car-description") #[strong Description:] #{car.description}
+                    div(class="buying-info")
+                        div(class="car-price") #[strong Price:] #{car.price}$
+                        div(class="car-stock") #[strong Stock:] #{car.inStock}

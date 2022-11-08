@@ -1,0 +1,32 @@
+@import url(style.css);
+
+.container {
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    text-align: left;
+    width: 30vw;
+}
+
+textarea,
+input{
+    border: 1px solid rgba(88, 88, 88, 0.63);
+    border-radius: 10px;
+    padding-block: 10px;
+    outline: none;
+    width: 80vw;
+    box-shadow: rgba(169, 174, 179, 0.2) 0px 2px 5px;
+}
+
+textarea{
+    resize: none !important;
+}
+
+.btn {
+    margin-top: 15px;
+}

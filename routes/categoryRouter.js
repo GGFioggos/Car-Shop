@@ -7,6 +7,8 @@ const categoryController = require('../controllers/categoryController');
 
 router.get('/', categoryController.all_categories);
 
+router.get('/create', categoryController.category_create_get);
+
 // Renders all cars corresponding to the given category
 router.get('/:id', categoryController.get_category);
 

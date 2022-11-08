@@ -48,3 +48,9 @@ exports.get_category = (req, res, next) => {
         }
     );
 };
+
+exports.category_create_get = (req, res, next) => {
+    res.render('create_category_form', {
+        title: 'Create new category',
+    });
+};

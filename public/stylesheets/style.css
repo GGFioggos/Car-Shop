@@ -86,6 +86,11 @@ a {
   height: 170px;
 }
 
+.new-icon {
+  height: 70% !important;
+  width: auto !important;
+}
+
 /* FOOTER */
 
 .footer {

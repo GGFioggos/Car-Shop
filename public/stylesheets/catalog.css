@@ -11,14 +11,16 @@ body,html {
 }
 
 .car-card {
-    border: 1px solid rgba(51, 51, 51, 0.623);
+    border: 1px solid rgba(51, 51, 51, 0.336);
     border-radius: 8px;
     display: flex;
     height: 280px;
     width: 750px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .car-image {
+    height: 100%;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
@@ -51,4 +53,3 @@ body,html {
     margin-top: 20px;
     justify-content: space-evenly;
 }
-

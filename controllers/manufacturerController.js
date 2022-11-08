@@ -1,4 +1,5 @@
 const async = require('async');
+const { body, validationResult } = require('express-validator');
 
 const Category = require('../models/Category');
 const Manufacturer = require('../models/Manufacturer');
@@ -49,3 +50,44 @@ exports.get_manufacturer = (req, res, next) => {
         }
     );
 };
+
+exports.manufacturer_create_get = (req, res, next) => {
+    res.render('create_manufacturer_form', {
+        title: 'Create new manufacturer',
+    });
+};
+
+exports.manufacturer_create_post = [
+    body('manufacturerName', 'Manufacturer name must be specified.')
+        .trim()
+        .escape()
+        .isLength({ min: 3 }),
+    body('manufacturerLogo', 'Manufacturer logo must be specified.')
+        .trim()
+        .isURL()
+        .withMessage('Manufacturer logo is not a valid URL.'),
+    (req, res, next) => {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            res.render('create_manufacturer_form', {
+                title: 'Create new manufacturer',
+                manufacturer: req.body,
+                errors: errors.array(),
+            });
+            return;
+        }
+
+        const newManufacturer = new Manufacturer({
+            name: req.body.manufacturerName,
+            logo: req.body.manufacturerLogo,
+        });
+
+        newManufacturer.save((err) => {
+            if (err) {
+                return next(err);
+            }
+            res.redirect('/manufacturers');
+        });
+    },
+];

@@ -62,14 +62,13 @@ exports.category_create_post = [
         .isLength({ min: 3 })
         .escape(),
     body('categoryDescription').trim().isLength({ max: 50 }).escape(),
-    body('categoryImage')
+    body('categoryImage', 'Category image must be specified.')
         .trim()
-        .optional({ checkFalsy: true })
         .isURL()
         .withMessage('Image must be a valid URL.'),
     (req, res, next) => {
         const errors = validationResult(req);
-
+        console.log(req.body);
         if (!errors.isEmpty()) {
             res.render('create_category_form', {
                 title: 'Create new category',

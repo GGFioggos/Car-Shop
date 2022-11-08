@@ -13,6 +13,10 @@ const CarSchema = new Schema({
     inStock: Number,
 });
 
+CarSchema.virtual('releaseYear_formatted').get(function () {
+    return this.releaseYear.toString().slice(10, 15);
+});
+
 CarSchema.virtual('url').get(function () {
     return `/car/${this._id}`;
 });

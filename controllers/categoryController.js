@@ -43,6 +43,7 @@ exports.get_category = (req, res, next) => {
             }
 
             res.render('catalog', {
+                category: results.category,
                 title: results.category.name,
                 cars: results.category_cars,
             });

@@ -1,0 +1,44 @@
+extends layout 
+
+block stylesheet
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z", crossorigin="anonymous")
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV", crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/form.css')
+
+block content
+  div(class="container")
+    form(method='POST' action='')
+      label(for='car_name') Name:
+      input#car_name.form-control(type='text' placeholder='Car name' name='carName')
+      label(for='description') Description:
+      textarea#description.form-control(type='text' placeholder='Car Description' name='carDescription' )
+      label(for='car_release') Release Year:
+      input#car_release.form-control(type='text' placeholder='Release year' name='carRelease')
+      label(for='car_price') Price:
+      input#car_price.form-control(type='number' placeholder='Car Price' name='carPrice')
+      
+      label(for='car_brand') Brand:
+      select#car_brand.form-control(type='select', placeholder='Select Brand' name='carBrand' required='true' )
+        for brand in brands
+            if selected_brand
+                option(value=brand._id selected=(selected_brand._id.toString() == brand._id)) #{brand.name}        
+            else
+                option(value=brand._id) #{brand.name}
+      
+      label(for='car_category') Category:
+      select#car_category.form-control(type='select', placeholder='Select Category' name='carCategory' required='true' )
+        for category in categories
+            if selected_category
+                option(value=category._id selected=(selected_category._id.toString() == category._id)) #{category.name}
+            else 
+                option(value=category._id) #{category.name} 
+    
+      label(for="category_image") Image:
+      input#category_image.form-control(type="text" placeholder="Category Image (URL)" name="categoryImage" value=(category === undefined ? '' : category.categoryImage)) 
+      button.btn.btn-primary(type='submit') Submit
+      div.errors
+        if errors 
+          ul
+            for error in errors
+              li.text-danger!= error.msg

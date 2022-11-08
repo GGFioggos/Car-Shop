@@ -1,7 +1,7 @@
 @import url("style.css");
 
 .container {
-    height: 50vh;
+    height: 700px;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -36,4 +36,8 @@ textarea{
 .errors li {
     text-align: left;
     list-style:circle;
+}
+
+option {
+    color: black;
 }

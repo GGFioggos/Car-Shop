@@ -44,6 +44,7 @@ exports.get_manufacturer = (req, res, next) => {
             }
 
             res.render('catalog', {
+                manufacturer: results.manufacturer,
                 title: results.manufacturer.name + ' Cars',
                 cars: results.manufacturer_cars,
             });

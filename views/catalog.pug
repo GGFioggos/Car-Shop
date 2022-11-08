@@ -33,6 +33,11 @@ block content
         else 
             h2 There are no cars in category #{title}
         div(class="create-car")
-            a(href="/car/create")
-                p #[strong Create new car]
-                img(class="new-icon" src="https://cdn3.iconfinder.com/data/icons/harmonicons-06/64/plus-circle-512.png", alt="create new car icon") 
+            if category
+                a(href="/car/create/" + category._id)
+                    p #[strong Create new car]
+                    img(class="new-icon" src="https://cdn3.iconfinder.com/data/icons/harmonicons-06/64/plus-circle-512.png", alt="create new car icon") 
+            if manufacturer
+                a(href="/car/create/" + manufacturer._id)
+                    p #[strong Create new car]
+                    img(class="new-icon" src="https://cdn3.iconfinder.com/data/icons/harmonicons-06/64/plus-circle-512.png", alt="create new car icon") 

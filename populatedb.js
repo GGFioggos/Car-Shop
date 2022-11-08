@@ -60,8 +60,12 @@ function carCreate(
     });
 }
 
-function categoryCreate(name, description, cb) {
-    var category = new Category({ name: name, description: description });
+function categoryCreate(name, description, image, cb) {
+    var category = new Category({
+        name: name,
+        description: description,
+        image: image,
+    });
 
     category.save(function (err) {
         if (err) {
@@ -155,6 +159,7 @@ function createCategories(cb) {
                 categoryCreate(
                     'Sports Cars',
                     'Made for high speeds and acceleration',
+                    'https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331cqgv2Z7d%25i02uCaY3MuO2kOHUtWPfbYfFdsd10tLhu1XzWVo7puMLWFmdkAj5DOPMt6JZ8XgY1nTNIowJ4HO3zkyXq%25sGM8snGhMQSk%2508Xc9Vo74gtZXNF1VgxNJ0%25lJfVZ8XJaFBVKLB9MEWO5GalL7GqGAGjoCrv0s9OD0QE4GA0og9RaNF9OALULRckIogOybyxCnvLUgCheU05GybUEqjmP89ChbNm6rgPoEqhk7wDvMLNmqn1%25YHDyk7m5VuTJYCn178z3lLtE5V1PaXs5fN8zVMRpc0SkPazDxi0IdnMRaYWHt1Q5DxRteJfgZ8YWxfjTW7cPteWS6lSdKMfjedwsSxBDS6jQ%250nq2Ydw6ZuA5MptQ%25wc3blcifZu%25KXhBjHSc3uBrq36JdKX324mXGTQBrXpF7PclZ24riI1usscpF4HvVYL0KiIFJGztOABHvIT9aNrO2JGvloRkdgpT9GsLxnKUilo90yWnxbHsLoACeKhhJ0yLOEjSgqTACygN6W9mlOECUkwet7sgNEbnCNJ10UkNh5E8zVAbnkq8NpFzOh5nmPkjmagq857Mn6XRUmP81D5wPxb7MPVY8A5Wh1DMztPOzeqVYDafMgxjmztYRS30b67aftxdXO%25w1RSfWQr4e%25VxdSeZ4F7uzWQdjcFs73aeZQ6KI04XRjcZwBv1srx6Kc%252GU14WwBKup91ZFe%252B3ioEVIjup2XHLDMv63iprJXDKGwXHi4TrY99%25rJHFl4ajou4TJIsFppL3FlTv0IfyyXIslGAv64Crv0s9Osr6E4GA0og0kXNF1AMd8U0%25lctO1qTMJFsyZLB9Weu0',
                     callback
                 );
             },
@@ -162,6 +167,7 @@ function createCategories(cb) {
                 categoryCreate(
                     'SUVs',
                     'Made for safety and overall family cars',
+                    'https://auto.suzuki.gr/_nuxt/img/across-suv.42089b1.png',
                     callback
                 );
             },
@@ -169,6 +175,7 @@ function createCategories(cb) {
                 categoryCreate(
                     'Super cars',
                     'Made to stand out as well as reach insane speeds',
+                    'https://cdn.cnngreece.gr/media/news/2019/07/19/184879/figure/CHEVROLET-CORVETTE-C8-2020-1.jpg',
                     callback
                 );
             },
@@ -176,6 +183,7 @@ function createCategories(cb) {
                 categoryCreate(
                     'Off-road',
                     'Made for nature exploration',
+                    'https://cars.usnews.com/images/article/202009/128385/2022_Ford_Bronco.jpg',
                     callback
                 );
             },
@@ -183,6 +191,7 @@ function createCategories(cb) {
                 categoryCreate(
                     'Micro-car',
                     'Made for city transportation',
+                    'https://www.autogreeknews.gr/wp-content/uploads/2020/09/Renault-Clio-1.5-Blue-dCi-115-PS-12.jpg',
                     callback
                 );
             },

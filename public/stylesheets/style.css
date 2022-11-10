@@ -146,6 +146,7 @@ a {
 }
 
 .fa-github {
+  vertical-align: middle;
   color: white;
   font-size: 22px;
   transition: transform 0.3s ease-in-out;

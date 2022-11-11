@@ -10,19 +10,19 @@ block content
   div(class="container")
     form(method='POST' action='')
       label(for='car_name') Name:
-      input#car_name.form-control(type='text' placeholder='Car name' name='carName')
+      input#car_name.form-control(type='text' placeholder='Car name' name='carName' value=(undefined===car? '': car.carName))
       label(for='description') Description:
-      textarea#description.form-control(type='text' placeholder='Car Description' name='carDescription' )
+      textarea#description.form-control(type='text' placeholder='Car Description' name='carDescription') #{(undefined===car? '': car.carDescription)}
       label(for='car_release') Release Year:
-      input#car_release.form-control(type='text' placeholder='Release year' name='carRelease')
+      input#car_release.form-control(type='text' placeholder='Release year' name='carRelease' value=(undefined===car? '': car.carRelease))
       label(for='car_price') Price:
-      input#car_price.form-control(type='number' placeholder='Car Price' name='carPrice')
+      input#car_price.form-control(type='number' placeholder='Car Price' name='carPrice' value=(undefined===car? '': car.carPrice))
       
       label(for='car_brand') Brand:
       select#car_brand.form-control(type='select', placeholder='Select Brand' name='carBrand' required='true' )
         for brand in brands
             if selected_brand
-                option(value=brand._id selected=(selected_brand._id.toString() == brand._id)) #{brand.name}        
+                option(value=brand._id selected=(selected_brand._id.toString() == brand._id)) #{brand.name}       
             else
                 option(value=brand._id) #{brand.name}
       
@@ -35,10 +35,10 @@ block content
                 option(value=category._id) #{category.name} 
     
       label(for="car_image") Image:
-      input#car_image.form-control(type="text" placeholder="Car Image (URL)" name="carImage") 
+      input#car_image.form-control(type="text" placeholder="Car Image (URL)" name="carImage" value=(undefined===car? '': car.carImage)) 
 
       label(for='car_stock') Stock:
-      input#car_stock.form-control(type='number' placeholder='Car Stock' name='carStock')
+      input#car_stock.form-control(type='number' placeholder='Car Stock' name='carStock' value=(undefined===car? '': car.carStock))
 
       button.btn.btn-primary(type='submit') Submit
       div.errors

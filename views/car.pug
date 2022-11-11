@@ -6,11 +6,13 @@ block stylesheet
 block content 
     div.title-options
         h2.title= title
-        ul.options 
-            li.delete 
-                button Delete
-            li.update
-                button Update
+        ul.options
+            a(href=`/car/delete/${car._id}`) 
+                li.delete 
+                    button Delete
+            a(href=`/car/update/${car._id}`) 
+                li.update
+                    button Update
     div(class="container") 
         div(class="car-card")
             

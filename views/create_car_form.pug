@@ -34,8 +34,12 @@ block content
             else 
                 option(value=category._id) #{category.name} 
     
-      label(for="category_image") Image:
-      input#category_image.form-control(type="text" placeholder="Category Image (URL)" name="categoryImage" value=(category === undefined ? '' : category.categoryImage)) 
+      label(for="car_image") Image:
+      input#car_image.form-control(type="text" placeholder="Car Image (URL)" name="carImage") 
+
+      label(for='car_stock') Stock:
+      input#car_stock.form-control(type='number' placeholder='Car Stock' name='carStock')
+
       button.btn.btn-primary(type='submit') Submit
       div.errors
         if errors 

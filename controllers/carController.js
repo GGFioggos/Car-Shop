@@ -59,10 +59,16 @@ exports.car_create_get = (req, res, next) => {
 };
 
 exports.car_create_post = [
-    body('carName', 'Category name must be specified.').trim().escape(),
-    body('carDescription', 'Description must be specified.').trim().escape(),
-    body('carRelease', 'Release year must be specified.').trim().escape(),
-    body('carPrice', 'Price must be specified.').trim().escape(),
+    body('carName', 'Car name must be specified.').trim().escape().notEmpty(),
+    body('carDescription', 'Description must be specified.')
+        .trim()
+        .escape()
+        .notEmpty(),
+    body('carRelease', 'Release year must be specified.')
+        .trim()
+        .escape()
+        .notEmpty(),
+    body('carPrice', 'Price must be specified.').trim().escape().notEmpty(),
     body('carImage', 'Image must be specified.').trim().isURL(),
     (req, res, next) => {
         const errors = validationResult(req);
@@ -93,10 +99,12 @@ exports.car_create_post = [
                         categories: results.categories,
                         selected_brand: results.brand,
                         brands: results.brands,
+                        car: req.body,
                         errors: errors.array(),
                     });
                 }
             );
+            return;
         }
 
         const newCar = new Car({
@@ -110,9 +118,9 @@ exports.car_create_post = [
             inStock: req.body.carStock,
         });
 
-        newCar.save((err) => {
-            if (err) {
-                return next(err);
+        newCar.save((error) => {
+            if (error) {
+                return next(error);
             }
 
             res.redirect(`/car/${newCar._id}`);

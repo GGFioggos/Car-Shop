@@ -1,0 +1,13 @@
+extends layout
+
+block stylesheet
+    link(rel="stylesheet", href="/stylesheets/delete_update.css")
+
+block content 
+    h2.title Are you sure you want to delete #{car.name}
+    div.options
+        a(href=`/car/${car._id}`) 
+            button.cancel Cancel 
+        form(action="" method="POST") 
+            button.delete Delete
+    

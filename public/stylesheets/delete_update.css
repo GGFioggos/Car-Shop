@@ -1,0 +1,22 @@
+@import url("style.css");
+
+button {
+    font-size: 1rem;
+    height: 40px;
+    width: 80px;
+    border-radius: 8px;
+    border: 1px solid rgba(130, 130, 130, 0.191);
+    cursor: pointer;
+    background-color: rgb(192, 192, 192);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+}
+
+.delete {
+    background-color: rgb(255, 77, 77) !important;
+}

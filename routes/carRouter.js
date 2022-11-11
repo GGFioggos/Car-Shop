@@ -7,6 +7,10 @@ const carController = require('../controllers/carController');
 
 router.get('/create/:id', carController.car_create_get);
 
+router.post('/create/:id', carController.car_create_post);
+
+router.get('/delete/:id', carController.car_delete_get);
+
 router.get('/:id', carController.get_car);
 
 module.exports = router;

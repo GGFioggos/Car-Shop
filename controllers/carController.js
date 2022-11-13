@@ -147,7 +147,15 @@ exports.car_delete_get = (req, res, next) => {
     });
 };
 
-exports.car_delete_post = (req, res, next) => {};
+exports.car_delete_post = (req, res, next) => {
+    Car.findByIdAndRemove(req.params.id, (err) => {
+        if (err) {
+            return next(err);
+        }
+
+        res.redirect('/home');
+    });
+};
 
 exports.car_update_get = (req, res, next) => {};
 

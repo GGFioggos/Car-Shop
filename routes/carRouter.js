@@ -11,6 +11,8 @@ router.post('/create/:id', carController.car_create_post);
 
 router.get('/delete/:id', carController.car_delete_get);
 
+router.post('/delete/:id', carController.car_delete_post);
+
 router.get('/:id', carController.get_car);
 
 module.exports = router;
